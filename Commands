@@ -4,7 +4,7 @@ Next step is to choose the architeture of your machine  like AMD64 etc.
 Now you can download the file from the page 
 And run the following commands 
 
-dpkg -I /path/to/file.deb
+dpkg -i /path/to/file.deb
 (This command is specially useful if you want to check what is being installed beforehand.)
 
 dpkg-deb --extract /path/to/file.deb
