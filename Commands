@@ -1,0 +1,51 @@
+Find out the dependencies required.Find out the missing package from searching it from https://packages.ubuntu.com/
+You can find our the exact package by scrolling down to the page and doing a exact search of package for your current OS of usage 
+Next step is to choose the architeture of your machine  like AMD64 etc. 
+Now you can download the file from the page 
+And run the following commands 
+
+dpkg -I /path/to/file.deb
+(This command is specially useful if you want to check what is being installed beforehand.)
+
+dpkg-deb --extract /path/to/file.deb
+(Extract All Files from a Deb Package)
+
+sudo dpkg -i /path/to/file.deb
+(Install a Deb File Using Dpkg)
+
+sudo dpkg -i /path/to/file.deb
+(The above command will install the standalone deb package only, without any dependencies.
+To fix this, you will have to run a command to auto-install required dependencies. 
+Otherwise your system may be left in a broken state. To fix the unmet dependency issue, run the command below:)
+
+sudo apt -f install
+
+You can also  Install a Deb File Using Gdebi
+To install gdebi in Ubuntu, run the command below:
+
+$ sudo apt install gdebi
+To install a “.deb” package using Gdebi, run the command below:
+
+$ sudo gdebi /path/to/file.deb
+(Since gdebi will take care of installation of dependencies, 
+you don’t have to manually run another command to fix broken packages. 
+However, if you want to check if there are broken packages or not 
+and fix them automatically, 
+you can run the command mentioned above again:)
+
+$ sudo apt -f install
+
+Using Apt to Install a Deb Package
+$ sudo apt install /path/to/file.deb
+
+$ sudo apt install ./file.deb
+(If you launched terminal inside the directory of “.deb” file)
+
+$ sudo apt install ./file.deb
+(Like gdebi, apt will automatically install 
+all the required dependencies)
+
+$ sudo apt -f install
+
+check the version of the package i.e run the below command 
+curl --version 
